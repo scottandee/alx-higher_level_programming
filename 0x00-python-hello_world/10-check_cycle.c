@@ -33,7 +33,7 @@ int listint_len(const listint_t *h)
 	{
 		return (0);
 	}
-	while (h != NULL)
+	while (h != NULL && count < 9)
 	{
 		count++;
 		h = h->next;
