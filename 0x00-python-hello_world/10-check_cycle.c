@@ -7,36 +7,21 @@
   */
 int check_cycle(listint_t *list)
 {	
-	int list_len;
+	int count = 0;
 
-	list_len = listint_len(list);
-
-	if (list_len > 8)
+	if (list == NULL)
+	{
+		return (0);
+	}
+	while (list != NULL && count < 9)
+	{
+		count++;
+		list = list->next;
+	}
+	if (count > 8)
 	{
 		return (0);
 	}
 	return (1);
 
-}
-
-/**
-  * listint_len - this counts the nnumber of elements in a singly linked list
-  * @h: this is the head of the list
-  * Return: the nuumber of elements in singly linked list
-  */
-
-int listint_len(const listint_t *h)
-{
-	int count = 0;
-
-	if (h == NULL)
-	{
-		return (0);
-	}
-	while (h != NULL && count < 9)
-	{
-		count++;
-		h = h->next;
-	}
-	return (count);
 }
