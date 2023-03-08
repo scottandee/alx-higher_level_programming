@@ -6,7 +6,7 @@
   * Return: 0 if there is no cycle, 1 if there's a cycle
   */
 int check_cycle(listint_t *list)
-{	
+{
 	listint_t *current;
 
 	current = list;
