@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 if __name__ == '__main__':
-# import builtin for argv
+    # import builtin for argv
     import sys
 # store length in a variable
     length = len(sys.argv)
