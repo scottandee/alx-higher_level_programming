@@ -1,2 +1,3 @@
 #!/usr/bin/python3
-dis.dis(magic_calculation)	
+def magic_calculation(a, b):
+    return 98 + a ** b
