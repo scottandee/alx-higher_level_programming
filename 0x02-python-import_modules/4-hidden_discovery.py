@@ -2,5 +2,7 @@
 if __name__ == "__main__":
     import hidden_4
     names = dir(hidden_4)
-    for i in range(9, len(names)):
+    for i in range(len(names)):
+        if names[i].startswith("_"):
+            continue
         print(names[i])
