@@ -9,5 +9,4 @@ def add_tuple(tuple_a=(), tuple_b=()):
         if i < len(list_a):
             list_b.append(0)
         added.append(list_a[i] + list_b[i])
-    return tuple(added)
-    
+    return tuple(added)    
