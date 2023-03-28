@@ -16,6 +16,7 @@ class Square:
     size : int
         size of the square
     """
+
     def __init__(self, size):
         """
         Constructs all the necessary attributes for the square object
@@ -25,4 +26,5 @@ class Square:
             size : str
                 size of the square
         """
+
         self.__size = size
