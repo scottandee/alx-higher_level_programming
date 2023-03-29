@@ -1,30 +1,10 @@
 #!/usr/bin/pythonu3
-"""
-Class:
-    Square
-"""
+"""This module initializes a private object variable"""
 
 
 class Square:
-    """
-    A class that creates a square
-
-    ...
-
-    Attibute
-    --------
-    size : int
-        size of the square
-    """
+    """A class that creates a square"""
 
     def __init__(self, size):
-        """
-        Constructs all the necessary attributes for the square object
-
-        Parameters:
-        -----------
-            size : str
-                size of the square
-        """
-
+        """This initializes the data"""
         self.__size = size
