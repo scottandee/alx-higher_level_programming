@@ -1,0 +1,43 @@
+>>> say_my_name = __import__("3-say_my_name").say_my_name
+>>> say_my_name(None, "Andee")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  ...
+    raise TypeError("first_name must be a string")
+TypeError: first_name must be a string
+
+>>> say_my_name("Andee")
+My name is Andee
+
+>>> say_my_name()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+>>> say_my_name(13, "Andee")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  ...
+    raise TypeError("first_name must be a string")
+TypeError: first_name must be a string
+
+>>> say_my_name(True, "Andee")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  ...
+    raise TypeError("first_name must be a string")
+TypeError: first_name must be a string
+
+>>> say_my_name(None)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  ...
+    raise TypeError("first_name must be a string")
+TypeError: first_name must be a string
+
+>>> say_my_name(True, 13)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  ...
+    raise TypeError("first_name must be a string")
+TypeError: first_name must be a string
