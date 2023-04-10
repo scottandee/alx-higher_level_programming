@@ -41,3 +41,10 @@ Traceback (most recent call last):
   ...
     raise TypeError("first_name must be a string")
 TypeError: first_name must be a string
+
+>>> say_my_name("Andee", 12)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  ...
+    raise TypeError("last_name must be a string")
+TypeError: last_name must be a string
