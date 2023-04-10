@@ -6,8 +6,8 @@ Traceback (most recent call last):
     raise TypeError("first_name must be a string")
 TypeError: first_name must be a string
 
->>> say_my_name("Andee")
-My name is Andee
+>>> say_my_name("Scott")
+My name is Scott 
 
 >>> say_my_name()
 Traceback (most recent call last):
