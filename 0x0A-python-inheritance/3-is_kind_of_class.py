@@ -7,6 +7,7 @@ that inherited from, the specified class
 
 
 def is_kind_of_class(obj, a_class):
+    """checks if obj is kind of class"""
     if isinstance(obj, a_class) is True:
         return True
     return False
