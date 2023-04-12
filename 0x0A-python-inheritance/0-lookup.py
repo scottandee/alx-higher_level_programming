@@ -1,6 +1,8 @@
 #!/usr/bin/python3
-"""This module contains a function that returns all\
-    the attributes of a class"""
+"""
+This module contains a function that returns all
+the attributes of a class
+"""
 
 
 def lookup(obj):
