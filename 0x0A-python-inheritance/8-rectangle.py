@@ -8,6 +8,7 @@ BaseGeometry = __import__("7-base_geometry").BaseGeometry
 class Rectangle(BaseGeometry):
     """Rectangle Inheritance of BaseGeometry class"""
     def __init__(self, width, height):
+        """This runs when a new class is instantiated"""
         super().integer_validator("width", width)
         super().integer_validator("height", height)
         self.__height = height
