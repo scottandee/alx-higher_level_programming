@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Module in which an empty class is created
+Module in which contains the Base Geometry class
+and instance methods: area and integer_validator
 """
 
 
@@ -11,6 +12,6 @@ class BaseGeometry:
 
     def integer_validator(self, name, value):
         if type(value) != int:
-            raise TypeError(f"{name} must be an integer")
+            raise TypeError("{} must be an integer".format(name))
         if value <= 0:
-            raise ValueError(f"{name} must be greater that zero")
+            raise ValueError("{} must be greater that zero".format(name))
