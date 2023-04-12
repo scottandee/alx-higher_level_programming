@@ -34,4 +34,3 @@ Traceback (most recent call last):
   ...
     raise TypeError(f"{name} must be an integer")
 TypeError: height must be an integer
->>>
