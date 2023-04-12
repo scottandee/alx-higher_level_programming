@@ -7,6 +7,7 @@ and instance methods: area and integer_validator
 
 class BaseGeometry:
     """This is a base geomety class with object method"""
+
     def area(self):
         """This finds the area"""
         raise Exception("area() is not implemented")
