@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module that contains a grandchild class"""\
+"""Module that contains a grandchild class"""
 
 
 Rectangle = __import__("9-rectangle").Rectangle
