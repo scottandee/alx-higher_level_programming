@@ -13,7 +13,7 @@ class MyEncoder(JSONEncoder):
     """This function encodes an object"""
 
     def default(self, obj):
-    """Defult method declared"""
+        """Defult method declared"""
         return obj.__dict__
 
 
