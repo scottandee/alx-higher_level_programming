@@ -6,4 +6,5 @@ def read_file(filename=""):
     """This fuction opens a file and reads it"""
 
     with open(filename, encoding="utf-8") as f:
-        print(f.read())
+        for line in f:
+            print(line, end='')
