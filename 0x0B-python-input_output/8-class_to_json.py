@@ -6,15 +6,6 @@ converts a class into JSON
 
 
 import json
-from json import JSONEncoder
-
-
-class MyEncoder(JSONEncoder):
-    """This function encodes an object"""
-
-    def default(self, obj):
-        """Defult method declared"""
-        return obj.__dict__
 
 
 def class_to_json(obj):
@@ -22,5 +13,5 @@ def class_to_json(obj):
     This function converts a class to JSON
     """
 
-    d = json.dumps(obj, cls=MyEncoder)
+    d = json.dumps(obj.__dict__)
     return json.loads(d)
