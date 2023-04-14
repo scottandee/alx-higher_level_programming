@@ -5,7 +5,6 @@ converts a class into JSON
 """
 
 
-
 def class_to_json(obj):
     """
     This function converts a class to JSON
