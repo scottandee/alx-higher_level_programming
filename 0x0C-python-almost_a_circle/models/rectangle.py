@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+
 """This module contains the rectangle class"""
 
 from models.base import Base
@@ -19,10 +19,10 @@ class Rectangle(Base):
             raise TypeError("height must be an integer")
         if type(y) != int:
             raise TypeError("y must be an integer")
-        if height <= 0:
-            raise ValueError("height must be > 0")
         if width <= 0:
             raise ValueError("width must be > 0")
+        if height <= 0:
+            raise ValueError("height must be > 0")
         if x < 0:
             raise ValueError("x must be >= 0")
         if y < 0:
@@ -110,7 +110,7 @@ class Rectangle(Base):
     def __str__(self):
         """This prints out the string representation of the rectangle"""
 
-        return f"[Rectangle] ({self.id) {self.x}/{self.y} - \
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - \
 {self.width}/{self.height}"
 
     def update(self, *args, **kwargs):
@@ -140,3 +140,10 @@ class Rectangle(Base):
                     self.x = args[i]
                 if i == 4:
                     self.y = args[i]
+
+    def to_dictionary(self):
+        """Returns the rectangle representation of a Rectangle instance"""
+
+        dic = {'id': self.id, 'height': self.height, 'width': self.width,
+               'x': self.x, 'y': self.y}
+        return dic
