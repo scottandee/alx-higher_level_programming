@@ -349,3 +349,16 @@ class TestKwargUpdate(unittest.TestCase):
         self.rect.update(54, 56, 7, y=3, x=3)
         self.assertEqual(self.rect.__str__(), "[Rectangle] (54) 10/10 - \
 56/7")
+
+
+class TestRectToDict(unittest.TestCase):
+    """
+    This tests method that converts the 
+    fields of the rectangle into a dictionary
+    """
+
+    def test_rect_to_dict(self):
+        rect = Rectangle(10, 2, 1, 9, 77)
+        expected = {'x': 1, 'y': 9, 'id': 77, 'height': 2, 'width': 10}
+        self.assertEqual(rect.to_dictionary(), expected)
+        self.assertEqual(type(rect.to_dictionary()), dict)
