@@ -35,12 +35,13 @@ class Base:
         of object list passed into to a file
         """
 
-        for i in range(len(list_objs)):
-            name = type(list_objs[i]).__name__
-            list_objs[i].to_dictionary()
-        with open("{}.json".format(name),
+        if list_objs is None:
+            list_objs = []
+
+        new = [obj.to_dictionary() for obj in list_objs]
+        with open("{}.json".format(cls.__name__),
                   mode="w", encoding="utf-8") as f:
-            f.write(cls.to_json_string(list_objs))
+            f.write(cls.to_json_string(new))
 
     @staticmethod
     def from_json_string(json_string):
@@ -52,3 +53,10 @@ class Base:
         if json_string is None or json_string == "[]":
             return []
         return json.loads(json_string)
+
+    def create(cls, **dictionary):
+        """This returns an instance with the attributes already set"""
+
+        rect = Rectangle(3, 4)
+        rect.update(**dictionary)
+        return cls(rect)
