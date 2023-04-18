@@ -130,3 +130,36 @@ class TestJsonToDictionary(unittest.TestCase):
         self.assertEqual(list_output, [{'size': 4, 'id': 89}, \
 {'size': 1, 'id': 7}])
 
+class TestDictionaryToInstance(unittest.TestCase):
+    """
+    This tests the class method that converts
+    a dictionary into a class instance
+    """
+
+    def test_rect_dictionary(self):
+        rect_1 = Rectangle(5, 6, 7, 5, 5)
+        dic = rect_1.to_dictionary()
+        rect_2 = Rectangle.create(**dic)
+        self.assertEqual(rect_2.__str__(), "[Rectangle] (5) 7/5 - 5/6")
+    
+    def test_sq_dictionary(self):
+        sq_1 = Square(5, 6, 7, 5)
+        dic = sq_1.to_dictionary()
+        sq_2 = Square.create(**dic)
+        self.assertEqual(sq_2.__str__(), "[Square] (5) 6/7 - 5")
+
+    def test_none_rect_dictionary(self):
+        dic = {}
+        self.assertRaises(TypeError, Rectangle.create(**dic))
+    def test_none_sq_dictionary(self):
+        dic = {} 
+        self.assertRaises(TypeError, Square.create(**dic))
+    def test_missing_height_rect_dictionary(self):
+        dic = {'width': 13} 
+        self.assertRaises(TypeError, Rectangle.create(**dic))
+    def test_missing_width_rect_dictionary(self):
+        dic = {'height': 13} 
+        self.assertRaises(TypeError, Rectangle.create(**dic))
+    def test_missing_size_square_dictionary(self):
+        dic = {'x': 13} 
+        self.assertRaises(TypeError, Square.create(**dic))
