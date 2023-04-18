@@ -35,5 +35,20 @@ class Base:
         of object list passed into to a file
         """
 
-        with open(cls + "py", mode="w", encoding="utf-8") as f:
+        for i in range(len(list_objs)):
+            name = type(list_objs[i]).__name__
+            list_objs[i].to_dictionary()
+        with open("{}.json".format(name),
+                  mode="w", encoding="utf-8") as f:
             f.write(cls.to_json_string(list_objs))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        This converts a JSON string representstion into
+        a list of dictionary
+        """
+
+        if json_string is None or json_string == "[]":
+            return "[]"
+        return json.loads(json_string)
