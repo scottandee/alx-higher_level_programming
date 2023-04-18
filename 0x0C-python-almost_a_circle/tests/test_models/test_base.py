@@ -99,3 +99,34 @@ class TestSaveToFile(unittest.TestCase):
 , {"y": 5, "x": 4, "id": 6, "size": 2}]
         self.assertEqual(json.loads(contents), expected)
 
+class TestJsonToDictionary(unittest.TestCase):
+    """
+    This tests the class method that
+    converts JSON string into a dictionary
+    """
+
+    def test_none_json_to_dict(self):
+        self.assertEqual(Rectangle.from_json_string(None), [])
+
+    def test_empty_json_to_dict(self):
+        self.assertEqual(Rectangle.from_json_string("[]"), [])
+    def test_rect_json_to_dict(self):
+        list_input = [
+        {'id': 89, 'width': 10, 'height': 4}, 
+        {'id': 7, 'width': 1, 'height': 7}
+        ]
+        json_list_input = Rectangle.to_json_string(list_input)
+        list_output = Rectangle.from_json_string(json_list_input)
+        self.assertEqual(list_output, [{'height': 4, 'width': 10, 'id': 89}, \
+{'height': 7, 'width': 1, 'id': 7}])
+
+    def test_sq_json_to_dict(self):
+        list_input = [
+        {'id': 89, 'size': 4}, 
+        {'id': 7, 'size': 1}
+        ]
+        json_list_input = Square.to_json_string(list_input)
+        list_output = Square.from_json_string(json_list_input)
+        self.assertEqual(list_output, [{'size': 4, 'id': 89}, \
+{'size': 1, 'id': 7}])
+
