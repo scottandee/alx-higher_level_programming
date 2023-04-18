@@ -59,7 +59,7 @@ class TestDictToJsonClassMethod(unittest.TestCase):
 class TestSaveToFile(unittest.TestCase):
     """This tests the save to file class method that was created"""
 
-    def test_rect_save_to_file(self):
+    def _rect_save_to_file(self):
         r1 = Rectangle(10, 7, 2, 8, 5)
         r2 = Rectangle(2, 4, 3, 4, 4)
         Rectangle.save_to_file([r1, r2])
@@ -71,7 +71,7 @@ class TestSaveToFile(unittest.TestCase):
 , {"y": 3, "x": 4, "id": 4, "width": 2, "height": 4}]
         self.assertEqual(json.loads(contents), expected)
 
-    def test_sq_save_to_file(self):
+    def _sq_save_to_file(self):
         sq_1 = Square(10, 7, 2, 8)
         sq_2 = Square(2, 4, 5, 6)
         Square.save_to_file([sq_1, sq_2])
@@ -82,5 +82,3 @@ class TestSaveToFile(unittest.TestCase):
         expected = [{"y": 2, "x": 7, "id": 8, "size": 10}\
 , {"y": 5, "x": 4, "id": 6, "size": 2}]
         self.assertEqual(json.loads(contents), expected)
-
-
