@@ -16,14 +16,14 @@ class Square:
             raise ValueError("size must be >= 0")
         if len(position) != 2:
             raise TypeError("position must be a tuple\
-of 2 positive integers")
+ of 2 positive integers")
         for i in range(len(position)):
             if type(position[i]) != int:
                 raise TypeError("position must be a tuple\
-of 2 positive integers")
+ of 2 positive integers")
             if position[i] < 0 or i > 3:
                 raise TypeError("position must be a tuple\
-of 2 positive integers")
+ of 2 positive integers")
         self.__position = position
         self.__size = size
 
@@ -53,14 +53,14 @@ of 2 positive integers")
         """
         if len(value) != 2:
             raise TypeError("position must be a tuple\
-of 2 positive integers")
+ of 2 positive integers")
         for i in range(len(value)):
             if type(value[i]) != int:
                 raise TypeError("position must be a tuple\
-of 2 positive integers")
+ of 2 positive integers")
             if value[i] < 0:
                 raise TypeError("position must be a tuple\
-of 2 positive integers")
+ of 2 positive integers")
         self.__position = value
 
     def area(self):
