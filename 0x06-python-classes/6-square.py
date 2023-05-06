@@ -8,12 +8,16 @@ with an optional size
 class Square:
     """This is a class that creates a square"""
 
-    def __init__(self, size=0):
+    def __init__(self, size=0, position=(0, 0)):
         """this initialises a private object variable"""
         if type(size) != int:
             raise TypeError("size must be an integer")
         if size < 0:
             raise ValueError("size must be >= 0")
+        for i in range(len(position)):
+            if position[i] < 0 or type(position[i]) != int or i > 3:
+                raise TypeError("position must be a tuple of 2 positive integers")
+        self.__position = position
         self.__size = size
 
     @property
@@ -30,6 +34,21 @@ class Square:
             raise ValueError("size must be >= 0")
         self.__size = value
 
+    @property
+    def position(self):
+        """This gets the position
+        """
+        return self.__position
+
+    @position.setter
+    def position(self, value):
+        """This sets the position
+        """
+        for i in range(len(value)):
+            if value[i] < 0 or type(value[i]) != int or i > 3:
+                raise TypeError("position must be a tuple of 2 positive integers")
+        self.__position = value
+
     def area(self):
         """This returns the area of the square"""
         return self.__size ** 2
@@ -38,7 +57,11 @@ class Square:
         """This prints the square"""
         if self.__size == 0:
             print()
+        for i in range(self.__position[1]):
+            print()
         for i in range(self.__size):
+            for i in range(self.__position[0]):
+                print(" ", end='')
             for j in range(self.__size):
                 print("#", end='')
             print()
