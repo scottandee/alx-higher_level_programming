@@ -34,8 +34,8 @@ class Square(Rectangle):
     def size(self, value):
         """This sets the size of the square instance"""
 
-        self.height = value
         self.width = value
+        self.height = value
 
     def update(self, *args, **kwargs):
         """This updates the values of the instance attributes"""
