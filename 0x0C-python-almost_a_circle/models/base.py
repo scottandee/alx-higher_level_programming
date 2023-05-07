@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """This module contains the Base class"""
 
-
 import json
 
 
@@ -57,7 +56,9 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """This returns an instance with the attributes already set"""
-
-        new = cls(3, 4)
+        if len(dictionary) == 1:
+            new = cls(5)
+        else:
+            new = cls(5, 5)
         new.update(**dictionary)
         return new
