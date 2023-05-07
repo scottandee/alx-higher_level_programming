@@ -9,10 +9,8 @@ class Square(Rectangle):
     """This is a grandchild class that inherits the rectangle class"""
 
     def __init__(self, size):
+
         super().__init__(size, size)
 
     def area(self):
         return super().area()
-
-    def __str___(self):
-        super().__str__()
