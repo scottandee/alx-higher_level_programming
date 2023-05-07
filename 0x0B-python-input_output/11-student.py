@@ -27,4 +27,9 @@ class Student:
         return dict(mylist)
 
     def reload_from_json(self, json):
-        """"""
+        """This replaces all attributes of the student instance
+        """
+
+        self.first_name = json["first_name"]
+        self.last_name = json["last_name"]
+        self.age = json["age"]
