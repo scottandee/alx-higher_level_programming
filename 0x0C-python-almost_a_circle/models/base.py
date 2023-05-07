@@ -2,6 +2,7 @@
 """This module contains the Base class"""
 
 import json
+import os.path
 
 
 class Base:
@@ -68,6 +69,8 @@ class Base:
         """This method loads a json string and converts it into an instance
         """
 
+        if not os.path.exists('{}.json'.format(cls.__name__)):
+            return []
         with open("{}.json".format(cls.__name__),
                   mode="r", encoding="utf-8") as f:
             json_string = f.read()
