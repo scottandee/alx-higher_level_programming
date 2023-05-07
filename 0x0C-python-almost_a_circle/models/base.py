@@ -62,3 +62,19 @@ class Base:
             new = cls(5, 5)
         new.update(**dictionary)
         return new
+
+    @classmethod
+    def load_from_file(cls):
+        """This method loads a json string and converts it into an instance
+        """
+
+        with open("{}.json".format(cls.__name__),
+                  mode="r", encoding="utf-8") as f:
+            json_string = f.read()
+
+        list_dict = cls.from_json_string(json_string)
+        instances = []
+
+        for dic in list_dict:
+            instances.append(cls.create(**dic))
+        return instances
