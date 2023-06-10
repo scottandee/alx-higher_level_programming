@@ -1,5 +1,5 @@
--- This script lists all shows and
--- linked to that show
+-- This script lists all shows and all
+-- genres linked to that show
 SELECT 	tv_shows.title, tv_genres.name
 FROM tv_shows
 LEFT JOIN tv_genres
