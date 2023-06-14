@@ -2,7 +2,7 @@
 import { argv } from 'node:process';
 
 if (argv[2] === undefined) {
-  console.log('No arguents');
+  console.log('No arguments');
 } else {
   console.log(argv[2]);
 }
