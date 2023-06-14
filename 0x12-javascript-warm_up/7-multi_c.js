@@ -1,6 +1,4 @@
 #!/usr/bin/node
-// This prints the string 'C is fun' x times.
-// x being the number of times to print
 
 import { argv } from 'node:process';
 

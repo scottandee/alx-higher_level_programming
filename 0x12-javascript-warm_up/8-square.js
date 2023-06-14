@@ -1,5 +1,4 @@
 #!/usr/bin/node
-// This script prints a square of specified size
 
 import { argv } from 'node:process';
 
