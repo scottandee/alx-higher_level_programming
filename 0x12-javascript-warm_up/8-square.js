@@ -3,7 +3,7 @@
 
 import { argv } from 'node:process';
 
-const size = Number(argv[2]);
+const size = parseInt(argv[2]);
 let width;
 
 if (isNaN(size)) {
