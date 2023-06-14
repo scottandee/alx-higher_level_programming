@@ -4,7 +4,7 @@
 
 import { argv } from 'node:process';
 
-const value = Number(argv[2]);
+const value = parseInt(argv[2]);
 
 if (isNaN(value)) {
   console.log('Not a number');
