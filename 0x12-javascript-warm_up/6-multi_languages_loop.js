@@ -1,6 +1,5 @@
 #!/usr/bin/node
-// This script loops through an array and prints
-// each member of the array
+// This script loops through an array and prints each member of the array
 
 const langs = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
 
