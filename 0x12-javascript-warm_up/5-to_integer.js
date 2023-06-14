@@ -7,7 +7,7 @@ import { argv } from 'node:process';
 const value = Number(argv[2]);
 
 if (isNaN(value)) {
-  console.log('No arguments');
+  console.log('Not a number');
 } else {
   console.log('My number: ' + value);
 }
