@@ -4,7 +4,7 @@
 
 import { argv } from 'node:process';
 
-const numOfOccurences = Number(argv[2]);
+const numOfOccurences = parseInt(argv[2]);
 
 if (isNaN(numOfOccurences)) {
   console.log('Missing number of occurences');
