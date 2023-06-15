@@ -1,8 +1,6 @@
 #!/usr/bin/node
 
-import { argv } from 'node:process';
-
-const size = parseInt(argv[2]);
+const size = parseInt(process.argv[2]);
 let width;
 
 if (isNaN(size)) {
