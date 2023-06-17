@@ -1,7 +1,9 @@
-#!/usr/bin/env python3
-"""This script selects all states from
-a database
+#!/usr/bin/python3
 """
+This script selects all states startin with N
+from a database
+"""
+
 
 import sys
 import MySQLdb
@@ -19,3 +21,5 @@ if __name__ == '__main__':
     rows = cur.fetchall()
     for row in rows:
         print(row)
+    cur.close()
+    db.close()
