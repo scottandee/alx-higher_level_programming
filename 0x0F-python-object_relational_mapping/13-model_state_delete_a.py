@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This script deletes all state objects 
+"""This script deletes all state objects
 with a name containing letter a
 """
 
@@ -24,4 +24,3 @@ if __name__ == '__main__':
         session.delete(state)
     session.commit()
     session.close()
-
