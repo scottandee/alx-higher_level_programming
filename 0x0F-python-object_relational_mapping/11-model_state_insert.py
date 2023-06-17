@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This script lists all states from the database"""
+"""This script adds a new state"""
 
 
 from model_state import Base, State
