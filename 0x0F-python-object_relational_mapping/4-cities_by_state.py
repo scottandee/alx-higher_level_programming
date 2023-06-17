@@ -1,8 +1,8 @@
-#!/usr/bin/yppthon3
+#!/usr/bin/python3
 """
-This script selects  all values in the states
-where name matches the argument database
+This script selects all cities from the database
 """
+
 
 import sys
 import MySQLdb
@@ -15,7 +15,11 @@ if __name__ == '__main__':
                          db="{}".format(sys.argv[3]))
 
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE states.name = %s", [sys.argv[4]])
+    cur.execute("""SELECT cities.id, cities.name, states.name
+                    FROM cities
+                    JOIN states
+                    ON states.id = cities.state_id
+                    ORDER BY cities.id;""")
     rows = cur.fetchall()
     for row in rows:
         print(row)
