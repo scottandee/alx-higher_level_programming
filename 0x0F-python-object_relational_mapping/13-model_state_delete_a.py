@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """This script deletes all state objects 
 with a name containing letter a
 """
