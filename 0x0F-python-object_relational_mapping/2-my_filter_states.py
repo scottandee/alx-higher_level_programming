@@ -1,4 +1,4 @@
-#!/usr/bin/yppthon3
+#!/usr/bin/python3
 """
 This script selects  all values in the states
 where name matches the argument database
