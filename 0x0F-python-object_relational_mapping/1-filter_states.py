@@ -17,7 +17,7 @@ if __name__ == '__main__':
 
     cur = db.cursor()
     cur.execute("""SELECT * FROM states WHERE LEFT(states.name, 1)
-                = %s ORDER BY states.id""", 'N')
+                = '{}' ORDER BY states.id""".format("N"))
     rows = cur.fetchall()
     for row in rows:
         print(row)
