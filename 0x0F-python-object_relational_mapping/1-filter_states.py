@@ -16,8 +16,11 @@ if __name__ == '__main__':
                          db="{}".format(sys.argv[3]))
 
     cur = db.cursor()
-    cur.execute("""SELECT * FROM states WHERE states.name LIKE 'N%' 
-                ORDER BY states.id""")
+    cur.execute("""
+                SELECT * FROM states
+                WHERE REGEXP_LIKE(name, '^N' COLLATE utf8mb4_0900_as_cs)
+                ORDER BY states.id
+                """)
     rows = cur.fetchall()
     for row in rows:
         print(row)
