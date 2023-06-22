@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This script selects all states startin with N
+This script selects all states starting with N
 from a database
 """
 
@@ -16,8 +16,8 @@ if __name__ == '__main__':
                          db="{}".format(sys.argv[3]))
 
     cur = db.cursor()
-    cur.execute("""SELECT * FROM states WHERE LEFT(states.name, 1)
-                = '{}' ORDER BY states.id""".format("N"))
+    cur.execute("""SELECT * FROM states WHERE states.name LIKE 'N%' 
+                ORDER BY states.id""")
     rows = cur.fetchall()
     for row in rows:
         print(row)
