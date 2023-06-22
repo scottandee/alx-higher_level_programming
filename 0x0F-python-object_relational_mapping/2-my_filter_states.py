@@ -15,7 +15,10 @@ if __name__ == '__main__':
                          db="{}".format(sys.argv[3]))
 
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE states.name = '{}'"
+    cur.execute("""
+                SELECT * FROM states
+                WHERE REGEXP_LIKE(name, '{}' COLLATE utf8mb4_0900_as_cs)
+                """
                 .format(sys.argv[4]))
     rows = cur.fetchall()
     for row in rows:
