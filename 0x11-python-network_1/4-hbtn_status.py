@@ -11,5 +11,5 @@ if __name__ == "__main__":
 
     req = requests.get(url)
     text = req.text
-    print("Body response:")
-    print("    - type: {}\n    - content: {}".format(type(text), text))
+    print("Body response:    \n- type: {}\n    - content: {}"
+          .format(type(text), text))
