@@ -21,3 +21,11 @@ This is a way to tell python that you want to have access to the functions and d
 3. `from mod_name import *`: This imports all names from a function
 4. `import mod_name as alias_name`
 5. `from mod_name import var_name as alias_name`
+
+### `if __name__ == '__main__'`
+When a module is imported, the `__name__` variable is set to the name of the module. Naturally, the contents of a module is run when imported. When a module is run, the `__name__` variable is then set to `__main__`. This indicates you are running the module as the main program.
+
+Adding the conditional `if __name__ == '__main__'`, then helps to check if the module is being imported or it is run directly.
+
+## What is `dir()` for?
+The dir function is used to check that are avaliable in a particular module's namespace.
