@@ -2,7 +2,7 @@
 Continuation from the previous project
 
 ## Sets
-A set is a set of unordered collection with no duplicate elements. A set contains a comma separated values enclosed by curly braces.`set(content)` can be used to create a set. An empty set can be created by using `set()`
+A set is a set of unordered collection with no duplicate elements. A set contains a comma separated values enclosed by curly braces.`set(content)` can be used to create a set. An empty set can be created by using `set()`. The set here is very similar to the set in algebra. Wecan perform difference, union, intersection
 
 ## Dictionary
 A dictionary is a set of comma separated key value pairs that are enclosed by curly braces. Unlike sequence types which are indexed with numbers starting from zero, dictionaries are indexed by the keys. A pair of braces create an empty dictionary.
