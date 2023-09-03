@@ -29,7 +29,10 @@ There are five major types of programming languages
 This method runs as soon as an instance of an object is created.
 
 ## Class and object Variables
-[Fields](https://python.swaroopch.com/oop.html), are nothing but ordinary variables that are bound to the namespaces of the classes and objects. Class variables can be accessed by all instaces while Instace variables are specific to each instance. Note that an object variable with the same name as a class variable will hide the class variable!. We can dynamically create new class and instance attributes by doing `class/instance.attr`.  
+[Fields](https://python.swaroopch.com/oop.html), are nothing but ordinary variables that are bound to the namespaces of the classes and objects. Class variables can be accessed by all instaces while Instace variables are specific to each instance. Note that an object variable with the same name as a class variable will hide the class variable!. We can dynamically create new class and instance attributes by doing `class/instance.attr`.
+
+## What are Properties
+
 ## Some Note-worthy methods
 * `.getattr`
 * 
