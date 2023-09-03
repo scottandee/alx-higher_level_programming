@@ -13,6 +13,10 @@ There are five major types of programming languages
 * Data Encapsulation: It is the bundling of data with the methods that operate on those methods. This is acheived by producing getters and setters
 * Information Hiding: data is hidden so it won't be sccidentally changed
 * Data Abstraction: This is the combination of both data hiding and data encapsulation.
+* Public Attribute: Used by anyone
+* Protected Attribute: Used at ones rist
+* Private: Should only be used by the owner. This is usually used in situations where we have to monitor the value of the atrribute and avoid accidentally changing that value. Private attributes usually have getters and setters. In the setter method of a private attribute, validation can be made in order to ensure that the right input goes into the private attribute.
+
 ## Terms Related to OOP
 * **Class**: This is a new type.
 * **Object**: This is an instance of a class.
@@ -34,4 +38,7 @@ This method runs as soon as an instance of an object is created.
 * We can access method and class docstrings by using `Class.__doc__` or `Class.method.__doc__`.
 * To see all information about instances, we can use the `instance.__dict__` which returns a dictionary of the instance.
 * Functions in python can also be attribute. They can serve as static functions like the one in C
-* `__str__`: used to produce a string representation
+* `__str__`: used to produce a nicely printed string representation.
+* `__repr__`: used to produce an internal representation of an object. With `__repr__`, obj == eval(repr(obj))
+* If `__str__` exists and `__str__` or print is called, it'll be applied. It won't be applied in the case that `__repr__` is called.
+* If only `__repr__` exists, if print, `__str__` or `__repr__` is called, then it'll be called.
