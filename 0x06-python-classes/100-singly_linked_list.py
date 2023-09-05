@@ -13,10 +13,10 @@ class Node:
         """This is the method that runs whenever
         a new Node object is created
         """
-        if isinstance(next_node, Node):
+        if not isinstance(next_node, Node):
             if next_node is not None:
                 raise TypeError("next_node must be a Node object")
-        if isinstance(data, int):
+        if not isinstance(data, int):
             raise TypeError("data must be an integer")
 
         self.__data = data
@@ -34,7 +34,7 @@ class Node:
         """This method assigns a value to the
         private attribute, data
         """
-        if isinstance(value, int):
+        if not isinstance(value, int):
             raise TypeError("data must be an integer")
         self.__data = value
 
@@ -50,16 +50,10 @@ class Node:
         """This method assigns a value to the
         private attribute, next_node
         """
-        if isinstance(value, Node):
+        if not isinstance(value, Node):
             if value is not None:
                 raise TypeError("next_node must be a Node object")
         self.__next_node = value
-
-    def __repr__(self):
-        """This returns the official representation
-        of a node
-        """
-        return "Node(" + str(self.__data) + ', ' + str(self.__next_node) + ")"
 
 
 class SinglyLinkedList:
@@ -75,37 +69,39 @@ class SinglyLinkedList:
         """This inserts a new node into the correct
         position in the linked list
         """
-        self.current = self.__head
+        current = self.__head
+        node = Node(value)
 
-        if self.current is None:
-            self.__head = eval("Node(" + str(value) + ", None)")
+        if current is None:
+            self.__head = node
             return
 
-        while self.current.next_node is not None:
-            if value < self.current.data:
-                self.node = eval("Node(" + str(self.current.data) + ", "
-                                 + self.current.next_node.__repr__() + ")")
-                self.current.data = value
-                self.current.next_node = self.node
+        while current.next_node is not None:
+            if value < current.data and current == self.__head:
+                node.next_node = current
+                self.__head = node
                 return
-            elif value == self.current.data:
-                self.node = eval("Node(" + str(value) + ", "
-                                 + self.current.next_node.__repr__() + ")")
-                self.current.next_node = self.node
+            if value >= current.data and value < current.next_node.data:
+                node.next_node = current.next_node
+                current.next_node = node
                 return
-            else:
-                self.current = self.current.next_node
+            current = current.next_node
 
-        self.node = eval("Node(" + str(value) + ", None)")
-        self.current.next_node = self.node
+        node = Node(value)
+        current.next_node = node
 
     def __str__(self):
         """This magic method will run when a SinglyLinkedList
         object is printed
         """
-        self.current = self.__head
+        current = self.__head
+        string = ""
 
-        while self.current.next_node is not None:
-            print(self.current.data)
-            self.current = self.current.next_node
-        return str(self.current.data)
+        while current is not None:
+            string = string + str(current.data)
+            if current.next_node is not None:
+                string = string + "\n"
+
+            current = current.next_node
+
+        return string
