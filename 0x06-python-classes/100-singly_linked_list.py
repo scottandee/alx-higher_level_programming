@@ -75,6 +75,10 @@ class SinglyLinkedList:
         if current is None:
             self.__head = node
             return
+        if current.next_node is None and value < current.data:
+            node.next_node = current
+            self.__head = node
+            return
 
         while current.next_node is not None:
             if value < current.data and current == self.__head:
@@ -87,7 +91,6 @@ class SinglyLinkedList:
                 return
             current = current.next_node
 
-        node = Node(value)
         current.next_node = node
 
     def __str__(self):
