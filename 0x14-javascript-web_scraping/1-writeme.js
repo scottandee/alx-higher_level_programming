@@ -2,7 +2,7 @@
 /* This script writes a string passed as
 argument into a file */
 
-const fs = require('node:fs');
+const fs = require('fs');
 
 const filePath = process.argv[2];
 const text = process.argv[3];
