@@ -35,7 +35,9 @@ request(todosUrl, (err, resp, body) => {
       const numOfDone = arrOfDoneByUser.length;
 
       // Add the userId and its corresponding number of done tasks to object
-      obj['' + id] = numOfDone;
+      if (numOfDone > 0) {
+        obj['' + id] = numOfDone;
+      }
     }
     console.log(obj);
   }
