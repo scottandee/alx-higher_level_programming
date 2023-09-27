@@ -14,7 +14,7 @@ request(url, (err, resp, body) => {
   } else {
     // convert json to object
     const obj = JSON.parse(body);
-    const numOfMovies = obj.results.length
+    const numOfMovies = obj.results.length;
 
     let count = 0;
     for (let i = 0; i < numOfMovies; i++) {
