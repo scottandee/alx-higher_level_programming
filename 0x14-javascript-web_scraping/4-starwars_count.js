@@ -14,9 +14,10 @@ request(url, (err, resp, body) => {
   } else {
     // convert json to object
     const obj = JSON.parse(body);
+    const numOfMovies = obj.results.length
 
     let count = 0;
-    for (let i = 0; i < obj.count; i++) {
+    for (let i = 0; i < numOfMovies; i++) {
       // Get the array characters in present in the movie
       const characters = obj.results[i].characters;
 
